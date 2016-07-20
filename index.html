@@ -29,9 +29,14 @@
 				78 : 'bee_boop',
 				75 : 'beebeez',
 				80 : 'beef',
-				76 : 'beef_beat'
+				76 : 'beef_beat',
+				18 : 'roll'
 			};
 			var howls={};
+			
+			howls[18]=new Howl({
+				urls: ['sounds/roll.mp3']
+			});
 			for(var i=49;i<91;i++){
 				if(sounds[i]){
 					howls[i]=new Howl({
