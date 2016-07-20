@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+	<head>
+		<title>Boots and Cats</title>
+		<meta charset="UTF-8"/>
+		<meta name="Description" content="A boots and cats and bees and beef, and whatever else you can come up with, multilayered piano on your keyboard, including animations too!"/>
+		<meta name="keywords" content="boots and cats,leather boots,boot,cat,leather,bee,bees,beez,song,beef,bison"/>
+		<meta name="robots" content="index,follow,archive"/>
+		
+		<link rel="icon" href="favicon.png"/>
+		
+		<script src="js/howler.js"></script>
+		<script>
+			var sounds={
+				49 : 'boot',
+				51 : 'cat',
+				81 : 'boots',
+				69 : 'cats',
+				90 : 'cats_mad',
+				65 : 'boots_beat',
+				68 : 'cats_beat',
+				88 : 'leather',
+				67 : 'boots_fast',
+				86 : 'kneehigh',
+				57 : 'bee',
+				73 : 'bee_beat',
+				74 : 'bees_beat',
+				78 : 'bee_boop',
+				75 : 'beebeez',
+				80 : 'beef',
+				76 : 'beef_beat'
+			};
+			var howls={};
+			for(var i=49;i<91;i++){
+				if(sounds[i]){
+					howls[i]=new Howl({
+						urls: ['sounds/' + sounds[i] + '.wav']
+					});
+				}
+			}
+					
+			document.onkeydown=function(e){
+				document.getElementById("textbox").value="";
+				if(sounds[e.keyCode]){
+					howls[e.keyCode].play();
+				}
+				else console.log("key not mapped : code is", e.keyCode);
+			}
+		</script>
+	</head>
+	
+	<body>
+		<center>
+		<img src="keyboard.svg" onload="this.width=window.innerWidth*0.9;" style="verticalAlign='text-bottom'"><br>
+		<input type="text" id="textbox" width=2><br>
+		Made by Nick Stathas (this dude ->)   <img src="profile.png">    . <a href="mailto:nickstathas99@gmail.com">My E-mail</a><br>
+		Original Audio by: Robert Clouth. <a href="mailto:contact@robclouth.com">Rob's E-mail</a><br>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/Nni0rTLg5B8" frameborder="0" allowfullscreen></iframe>
+		</center>
+	</body>
+</html>
